@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import xml2js from 'xml2js';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({

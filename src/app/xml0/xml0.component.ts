@@ -1,6 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import xml2js from 'xml2js';
+import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
