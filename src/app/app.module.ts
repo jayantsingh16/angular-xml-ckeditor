@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DemoMaterialModule } from './material-module';
 import { HttpClientModule } from '@angular/common/http';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,8 +22,13 @@ import { Xml2Component } from './xml2/xml2.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
+    DemoMaterialModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
     CKEditorModule
   ],
   providers: [],
