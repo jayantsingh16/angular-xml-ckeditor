@@ -9,12 +9,4 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./xml0.component.css']
 })
 export class Xml0Component {
-[x: string]: any;
-  public Editor = ClassicEditor;
-  public editorData = '<p>Hello, world!</p>';
-  @ViewChild( 'editor' ) editorComponent: Xml0Component;
-
-    public getEditor() {
-        return this.editorComponent.editorInstance;
-    }
 }

@@ -8,5 +8,4 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./xml1.component.css']
 })
 export class Xml1Component {
-  panelOpenState = false;
 }
