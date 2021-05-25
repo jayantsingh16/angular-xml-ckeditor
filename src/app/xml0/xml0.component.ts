@@ -9,6 +9,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./xml0.component.css']
 })
 export class Xml0Component {
+downloadXML: any;
+
+  constructor(private _http: HttpClient) {}
   public Editor = ClassicEditorWithAutosave;
   public editorData: any
   public config = {
@@ -17,14 +20,11 @@ export class Xml0Component {
 			save: Editor => this.saveData( Editor.getData() )
 		},
 	}
-  saveFile(data) {
-    const blob = 
-        new Blob([
-                 data], 
-                 {type: "text/xml;charset=utf-8"});
-    saveAs(blob, "/assets/users.xml");
-  }
 	public saveData(data) {
-    this.saveFile(data);
-	}
+    this.downloadXML().subscribe(
+    response =>{
+        const filename = '/assets/users.xml';
+        saveAs(response, filename);
+    })
+  }
 }
