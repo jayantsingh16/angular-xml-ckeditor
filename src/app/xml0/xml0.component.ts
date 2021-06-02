@@ -9,22 +9,27 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./xml0.component.css']
 })
 export class Xml0Component {
-downloadXML: any;
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) { this.retrieveFile(); }
+  retrieveFile() {
+    this._http.get('/assets/users.xml').subscribe(data => {
+    console.log(data.text());
+})
+  }
   public Editor = ClassicEditorWithAutosave;
   public editorData: any
   public config = {
+    allowedContent: true,
+    forcePasteAsPlainText: true,
 		autosave: {
 			waitingTime: 5000,
 			save: Editor => this.saveData( Editor.getData() )
 		},
 	}
 	public saveData(data) {
-    this.downloadXML().subscribe(
-    response =>{
-        const filename = '/assets/users.xml';
-        saveAs(response, filename);
-    })
+    console.log(data);
+    const filename = '/assets/users.xml';
+    saveAs(data, filename);
   }
+
 }
