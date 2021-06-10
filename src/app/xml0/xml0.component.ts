@@ -13,7 +13,7 @@ export class Xml0Component {
   constructor(private _http: HttpClient) { this.retrieveFile(); }
   retrieveFile() {
     this._http.get('/assets/users.xml').subscribe(data => {
-    console.log(data.text());
+    console.log(data);
 })
   }
   public Editor = ClassicEditorWithAutosave;
